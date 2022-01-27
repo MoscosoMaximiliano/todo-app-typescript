@@ -15,7 +15,7 @@ const TaskCard = ({ task, IStateTask, IDeleteTask }: ITaskItem) => {
         className='justify-content col-span-1 h-8 w-8 rounded self-center'
         onClick={() => IStateTask(task.id)}
       />
-      <p className="break-all col-span-10 text-center">{task.description}</p>
+      <p className={task.completed ? "break-all col-span-10 text-center text-lg text-inherit" : "break-all col-span-10 text-center text-lg text-textColor"}>{task.description}</p>
       <button className='bg-error rounded col-span-1' onClick={() => IDeleteTask(task.id)}>
         Delete
       </button>

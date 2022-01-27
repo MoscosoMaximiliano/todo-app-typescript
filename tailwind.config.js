@@ -7,11 +7,11 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       primaryBackground: "#2A363B",
-      secondaryBackground: "#FF847C",
+      secondaryBackground: "#2A365D",
       error: "#E84A5F",
       success: "#99B898",
       successHover: "#99B877",
-      textColor: "#FF847C",
+      textColor: "#FFFF",
     },
   },
   plugins: [],
