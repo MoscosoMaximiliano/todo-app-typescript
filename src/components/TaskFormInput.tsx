@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { ITask } from '../interfaces/ITask'
+import {BsPen} from "react-icons/bs"
 
 type FormElement = React.FormEvent<HTMLFormElement>
 
@@ -12,24 +13,26 @@ const TaskFormInput = (props: Props) => {
 
   const HandleSubmit = (e: FormElement) => {
     e.preventDefault()
-    props.AddNewTask(newTask)
-    setNewTask('')
+    if(newTask.length > 0) {
+      props.AddNewTask(newTask)
+      setNewTask('')
+    }
   }
 
   return (
     <form onSubmit={HandleSubmit} action='' method='post'>
-      <div className='grid grid-rows-2 p-2 bg-secondaryBackground rounded m-10'>
+      <div className='grid grid-rows-2 p-4 drop-shadow-md bg-secondaryBackground rounded-lg'>
         <input
-          className='border-2 rounded border-yellow-500 mb-8'
+          className='rounded mb-4 p-4 w-auto'
           type='text'
           value={newTask}
           onChange={e => setNewTask(e.target.value)}
         />
         <button
-          className='bg-success border-none rounded hover:bg-green-300'
+          className='inline-flex items-center justify-center h-10 px-5 transition-colors duration-150 bg-success rounded-lg focus:shadow-outline hover:bg-successHover'
           type='submit'
         >
-          Submit
+          Submit <BsPen className='ml-4'/>
         </button>
       </div>
     </form>

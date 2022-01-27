@@ -7,17 +7,16 @@ const TaskCard = ({ task, IStateTask, IDeleteTask }: ITaskItem) => {
   return (
     <div
       key={task.id}
-      className='grid grid-cols-3 justify-content content-center rounded mx-auto h-auto w-auto bg-secondaryBackground p-2 m-2'
+      className={task.completed ? 'grid grid-cols-12 justify-content items-center rounded  bg-success p-2 m-2'
+                : 'grid grid-cols-12 justify-content content-center rounded bg-secondaryBackground p-2 m-2'}
     >
       <input
         type='checkbox'
-        name=''
-        id=''
+        className='justify-content col-span-1 h-8 w-8 rounded self-center'
         onClick={() => IStateTask(task.id)}
       />
-      <h1>{task.description}</h1>
-      <p>completed: {task.completed.toString()}</p>
-      <button className='bg-error' onClick={() => IDeleteTask(task.id)}>
+      <p className="break-all col-span-10 text-center">{task.description}</p>
+      <button className='bg-error rounded col-span-1' onClick={() => IDeleteTask(task.id)}>
         Delete
       </button>
     </div>

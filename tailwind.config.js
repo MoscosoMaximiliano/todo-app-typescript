@@ -10,6 +10,7 @@ module.exports = {
       secondaryBackground: "#FF847C",
       error: "#E84A5F",
       success: "#99B898",
+      successHover: "#99B877",
       textColor: "#FF847C",
     },
   },

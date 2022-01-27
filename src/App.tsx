@@ -33,7 +33,7 @@ const App: React.FC = () => {
     setTasks(tasks.filter(task => task.id !== i))
 
   return (
-    <div className='grid justify-content place-items-center content-center place-content-center h-auto bg-primaryBackground'>
+    <div className='min-h-screen p-10 drop-shadow-md bg-primaryBackground'>
       <TaskFormInput AddNewTask={AddTask} />
       <TaskList tasks={tasks} IStateTask={StateTask} IDeleteTask={DeleteTask} />
     </div>
